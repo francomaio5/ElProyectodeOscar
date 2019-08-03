@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SingleSuite" verbose="1" parallel="tests" thread-count="2">
+
+    <parameter name="currency" value="GBP"/>
+    <parameter name="userName" value="alberto0918sd9@alonso.uy"/>
+    <parameter name="password" value="password01"/>
+
+    <parameter name="browser" value="chrome"/>
+    <test name="test in Chrome">
+        <classes>
+            <class name = "TestOpenCart">
+                <methods>
+                    <include name="testRegistro"/>
+                    <include name="testLogin"/>
+                </methods>
+            </class>
+            <class name = "HomePageTest">
+                <methods>
+                    <include name="cambioMonedaParameters"/>
+                </methods>
+            </class>
+            <class name = "ProductManagementTest">
+                <methods>
+                    <include name="addToWishTest"/>
+                    <include name="addToCartTest"/>
+                    <include name="addToCartMenorPrecio"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
